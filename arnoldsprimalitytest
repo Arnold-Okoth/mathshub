@@ -1,0 +1,31 @@
+import random
+
+def fast_modular_exponentiation(a, n, mod):
+    result = 1
+    while n > 0:
+        if n % 2 == 1:
+            result = (result * a) % mod
+        a = (a * a) % mod
+        n = n // 2
+    return result
+
+def is_prime(n, a):
+    if fast_modular_exponentiation(a, n-1, n) == 1:
+        return True
+    return False
+
+def check_prime(n):
+    if n <= 1:
+        return False
+    for a in range(2, min(n, 997)):
+        if not is_prime(n, a):
+            return False
+    return True
+
+# You can change the value of 7 to any number you perform a primality test on
+n = 7
+
+if check_prime(n):
+    print("Prime")
+else:
+    print("Composite")
