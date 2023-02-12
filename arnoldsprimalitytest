@@ -22,7 +22,7 @@ def check_prime(n):
             return False
     return True
 
-# You can change the value of 7 to any number you perform a primality test on
+# You can change the value of 7 to any number you would wish to perform a primality test on
 n = 7
 
 if check_prime(n):
